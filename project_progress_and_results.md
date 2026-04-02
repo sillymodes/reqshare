@@ -79,3 +79,18 @@
   - Viewer uses `../` prefixes for assets
   - "See an Example" points to `c/#demo` (placeholder for Step 10)
   - No external dependencies — all vanilla HTML/CSS/JS
+
+### Step 8 — CI/CD Deployment
+- **Status:** COMPLETE
+- **What was done:**
+  - Implemented `.github/workflows/deploy.yml` with two parallel jobs:
+    - `deploy-pages`: uses actions/configure-pages@v5, upload-pages-artifact@v3, deploy-pages@v4 to deploy `site/` to GitHub Pages
+    - `deploy-worker`: uses cloudflare/wrangler-action@v3 to deploy Worker from `worker/` directory
+  - Set workflow permissions: `pages: write`, `id-token: write`, `contents: read`
+  - Set `CLOUDFLARE_API_TOKEN` repo secret via GitHub API (encrypted with repo public key using libsodium/pynacl)
+  - Enabled GitHub Pages with `build_type: workflow` via GitHub API (POST /repos/{owner}/{repo}/pages)
+  - Added `account_id` to `worker/wrangler.toml` to fix account-scoped token authentication
+  - Workflow run #23879018591 completed successfully — both jobs passed
+- **Live URLs:**
+  - GitHub Pages: https://sillymodes.github.io/reqshare/
+  - Worker: https://reqshare-api.sillymodes.workers.dev
