@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sillymodes.github.io/reqshare/sitemap.xml

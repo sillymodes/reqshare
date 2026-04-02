@@ -1,0 +1,13 @@
+# TODO: CI/CD — deploy site to GitHub Pages + Worker via Wrangler
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: Add GitHub Pages and Cloudflare Worker deployment steps
