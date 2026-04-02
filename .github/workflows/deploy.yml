@@ -1,13 +1,42 @@
-# TODO: CI/CD — deploy site to GitHub Pages + Worker via Wrangler
 name: Deploy
 
 on:
   push:
     branches: [main]
 
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
 jobs:
-  deploy:
+  deploy-pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-worker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # TODO: Add GitHub Pages and Cloudflare Worker deployment steps
+
+      - name: Deploy Worker to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: worker/

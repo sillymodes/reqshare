@@ -15,4 +15,9 @@
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://sillymodes.github.io/reqshare/c/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

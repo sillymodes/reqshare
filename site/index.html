@@ -3,12 +3,181 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReqShare</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>ReqShare — Shareable, Runnable API Examples</title>
+  <meta name="description" content="Create runnable API example pages and share them with a link. The fastest way to show someone how an API works. No signup required.">
+  <meta name="keywords" content="shareable API examples, runnable API documentation, share curl commands online, API request playground, embeddable API tester">
+  <link rel="canonical" href="https://sillymodes.github.io/reqshare/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReqShare — Shareable, Runnable API Examples">
+  <meta property="og:description" content="Create runnable API example pages and share them with a link. No signup. No install.">
+  <meta property="og:url" content="https://sillymodes.github.io/reqshare/">
+  <meta property="og:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReqShare — Shareable, Runnable API Examples">
+  <meta name="twitter:description" content="Create runnable API example pages and share them with a link. No signup. No install.">
+  <meta name="twitter:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ReqShare",
+    "url": "https://sillymodes.github.io/reqshare/",
+    "description": "Create shareable, runnable API example pages. The fastest way to show someone how an API works.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "browserRequirements": "Requires JavaScript"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- TODO: Landing page -->
-  <script src="/js/app.js"></script>
+
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+      <a href="./" class="logo" aria-label="ReqShare home">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 12L48 32L28 52" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 32H12" stroke="#58a6ff" stroke-width="6" stroke-linecap="round"/></svg>
+        ReqShare
+      </a>
+      <nav>
+        <a href="create.html">Build</a>
+        <a href="stats.html">Stats</a>
+        <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="container">
+        <h1>Show your API, don't just describe it.</h1>
+        <p class="subtitle">Create runnable API example pages and share them with a link. No signup. No install. The fastest way to onboard developers to any API.</p>
+        <div class="cta-group">
+          <a href="create.html" class="btn btn-primary">Build a Collection</a>
+          <a href="c/#demo" class="btn btn-secondary">See an Example</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works fade-in fade-in-delay-1">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">
+              <span class="step-number">1</span>
+            </div>
+            <h3>Add Your Requests</h3>
+            <p>Configure API endpoints with methods, headers, and bodies. Use environment variables for tokens and base URLs.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <span class="step-number">2</span>
+            </div>
+            <h3>Get a Share Link</h3>
+            <p>One click generates a unique URL for your collection. Share it in docs, Slack, README files, or anywhere.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <span class="step-number">3</span>
+            </div>
+            <h3>Anyone Can Run Them</h3>
+            <p>Recipients open the link and execute requests live in the browser. See real responses, headers, and timing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases fade-in fade-in-delay-2">
+      <div class="container">
+        <h2>Built for Developers Who Ship APIs</h2>
+        <div class="use-case-grid">
+          <div class="card use-case-card">
+            <div class="uc-icon" aria-hidden="true">&#128214;</div>
+            <h3>API Documentation</h3>
+            <p>Embed runnable API examples directly in your docs. Let users try endpoints before writing a single line of code.</p>
+          </div>
+          <div class="card use-case-card">
+            <div class="uc-icon" aria-hidden="true">&#128101;</div>
+            <h3>Team Onboarding</h3>
+            <p>Show new developers how your backend works with live, executable requests instead of stale wiki pages.</p>
+          </div>
+          <div class="card use-case-card">
+            <div class="uc-icon" aria-hidden="true">&#128027;</div>
+            <h3>Bug Reports</h3>
+            <p>Reproduce issues with exact API requests. Share the collection link in your issue tracker for instant context.</p>
+          </div>
+          <div class="card use-case-card">
+            <div class="uc-icon" aria-hidden="true">&#128230;</div>
+            <h3>Open Source Projects</h3>
+            <p>Provide working API examples in your README. Contributors can run them instantly without setting up Postman.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Demo -->
+    <section class="live-demo fade-in fade-in-delay-3">
+      <div class="container">
+        <h2>Try It Right Now</h2>
+        <p>These are live API calls to JSONPlaceholder. Click "Run" to execute them in your browser.</p>
+        <div class="demo-container" id="demo-container">
+          <div class="demo-header">
+            <span class="demo-dot red"></span>
+            <span class="demo-dot yellow"></span>
+            <span class="demo-dot green"></span>
+            <span style="margin-left:8px">JSONPlaceholder API Examples</span>
+          </div>
+          <div class="demo-requests" id="demo-requests">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site-Wide Reviews -->
+    <section class="reviews-section fade-in" id="reviews-section">
+      <div class="container">
+        <h2>What Developers Are Saying</h2>
+        <div class="reviews-summary" id="reviews-summary">
+          <!-- Populated by app.js -->
+        </div>
+        <div class="review-list" id="review-list">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>ReqShare &mdash; Built with Cloudflare Workers &amp; GitHub Pages</span>
+        <div class="footer-links">
+          <a href="stats.html">Stats</a>
+          <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://buymeacoffee.com/timtian" target="_blank" rel="noopener">Buy Me a Coffee</a>
+          <a href="https://github.com/sillymodes/reqshare/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

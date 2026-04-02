@@ -3,12 +3,123 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReqShare - Create Collection</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Build a Collection — ReqShare</title>
+  <meta name="description" content="Create a shareable API request collection. Add endpoints, headers, and bodies, then share with a single link. No signup needed.">
+  <link rel="canonical" href="https://sillymodes.github.io/reqshare/create.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Build a Collection — ReqShare">
+  <meta property="og:description" content="Create a shareable API request collection with runnable examples. No signup needed.">
+  <meta property="og:url" content="https://sillymodes.github.io/reqshare/create.html">
+  <meta property="og:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Build a Collection — ReqShare">
+  <meta name="twitter:description" content="Create a shareable API request collection with runnable examples. No signup needed.">
+  <meta name="twitter:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Build a Collection — ReqShare",
+    "description": "Create a shareable API request collection with runnable examples.",
+    "url": "https://sillymodes.github.io/reqshare/create.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- TODO: Collection builder -->
-  <script src="/js/builder.js"></script>
+
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+      <a href="./" class="logo" aria-label="ReqShare home">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 12L48 32L28 52" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 32H12" stroke="#58a6ff" stroke-width="6" stroke-linecap="round"/></svg>
+        ReqShare
+      </a>
+      <nav>
+        <a href="./">Home</a>
+        <a href="stats.html">Stats</a>
+        <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="builder-section fade-in">
+      <div class="container">
+        <h1>Build a Collection</h1>
+        <p>Add your API requests below. Use environment variables like <code class="inline-code">{{BASE_URL}}</code> to keep things clean.</p>
+
+        <!-- Collection Info -->
+        <div class="card" style="margin-bottom:24px">
+          <div class="form-group">
+            <label for="collection-name">Collection Name</label>
+            <input type="text" id="collection-name" placeholder="e.g. Acme API v2 Examples" maxlength="100">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label for="collection-desc">Description (optional)</label>
+            <input type="text" id="collection-desc" placeholder="e.g. Working examples for the Acme REST API" maxlength="300">
+          </div>
+        </div>
+
+        <!-- cURL Import -->
+        <div class="curl-import card" id="curl-import">
+          <h3 style="margin-bottom:8px">Import from cURL</h3>
+          <p style="font-size:0.85rem;margin-bottom:8px">Paste a cURL command to auto-populate a new request.</p>
+          <textarea id="curl-input" rows="3" placeholder='curl -X POST https://api.example.com/data -H "Authorization: Bearer token" -d \'{"key":"value"}\''></textarea>
+          <button class="btn btn-secondary btn-sm" id="btn-parse-curl">Parse cURL</button>
+        </div>
+
+        <!-- Environment Variables -->
+        <div class="env-vars-section card">
+          <h3>Environment Variables</h3>
+          <p class="env-hint">Reference these in your URLs and headers with <code class="inline-code">{{VAR_NAME}}</code> syntax.</p>
+          <div id="env-vars-list" style="margin-top:12px">
+            <!-- Populated by builder.js -->
+          </div>
+          <button class="btn btn-secondary btn-sm" id="btn-add-env" style="margin-top:8px">+ Add Variable</button>
+        </div>
+
+        <!-- Requests -->
+        <div class="requests-section">
+          <h3>Requests</h3>
+          <div id="requests-list">
+            <!-- Populated by builder.js -->
+          </div>
+          <button class="btn btn-secondary" id="btn-add-request" style="margin-top:12px">+ Add Request</button>
+        </div>
+
+        <!-- Final Actions -->
+        <div class="builder-final-actions">
+          <button class="btn btn-primary" id="btn-create" style="font-size:1rem;padding:14px 28px">Create and Get Share Link</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>ReqShare &mdash; Built with Cloudflare Workers &amp; GitHub Pages</span>
+        <div class="footer-links">
+          <a href="./">Home</a>
+          <a href="stats.html">Stats</a>
+          <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://buymeacoffee.com/timtian" target="_blank" rel="noopener">Buy Me a Coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal placeholder -->
+  <div id="modal-container"></div>
+
+  <script src="js/builder.js"></script>
 </body>
 </html>

@@ -3,12 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReqShare Stats</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>ReqShare Stats — Usage and Visitor Analytics</title>
+  <meta name="description" content="Public usage statistics for ReqShare. See page views, unique visitors, collections created, and review scores.">
+  <link rel="canonical" href="https://sillymodes.github.io/reqshare/stats.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReqShare Stats — Usage and Visitor Analytics">
+  <meta property="og:description" content="Public usage statistics for ReqShare. See page views, visitors, and review scores.">
+  <meta property="og:url" content="https://sillymodes.github.io/reqshare/stats.html">
+  <meta property="og:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReqShare Stats — Usage and Visitor Analytics">
+  <meta name="twitter:description" content="Public usage statistics for ReqShare. See page views, visitors, and review scores.">
+  <meta name="twitter:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ReqShare Stats — Usage and Visitor Analytics",
+    "description": "Public usage statistics for ReqShare. Page views, unique visitors, and community review scores.",
+    "url": "https://sillymodes.github.io/reqshare/stats.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- TODO: Stats dashboard -->
-  <script src="/js/stats.js"></script>
+
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+      <a href="./" class="logo" aria-label="ReqShare home">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 12L48 32L28 52" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 32H12" stroke="#58a6ff" stroke-width="6" stroke-linecap="round"/></svg>
+        ReqShare
+      </a>
+      <nav>
+        <a href="./">Home</a>
+        <a href="create.html">Build</a>
+        <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats-hero fade-in">
+      <div class="container">
+        <h1>ReqShare Stats</h1>
+        <p>Public usage and community analytics, updated in real time.</p>
+      </div>
+    </section>
+
+    <section class="fade-in fade-in-delay-1">
+      <div class="container">
+        <!-- Loading -->
+        <div class="loading-state" id="stats-loading">
+          <div class="spinner spinner-lg"></div>
+          <span>Loading stats...</span>
+        </div>
+
+        <!-- Content (hidden until loaded) -->
+        <div id="stats-content" style="display:none">
+          <!-- Big Numbers -->
+          <div class="stats-grid" id="stats-grid">
+            <div class="card stat-card stat-card-accent">
+              <div class="stat-number" id="stat-views">--</div>
+              <div class="stat-label">Total Page Views</div>
+            </div>
+            <div class="card stat-card">
+              <div class="stat-number" id="stat-visitors">--</div>
+              <div class="stat-label">Unique Visitors</div>
+            </div>
+            <div class="card stat-card">
+              <div class="stat-number" id="stat-collections">--</div>
+              <div class="stat-label">Collections Created</div>
+            </div>
+          </div>
+
+          <!-- Review Score -->
+          <div class="card review-score-card" id="review-score-card">
+            <div class="score-big" id="review-avg">--</div>
+            <div class="stars stars-lg" id="review-stars-display" style="justify-content:center;margin:8px 0"></div>
+            <div class="score-label" id="review-count-label">-- reviews</div>
+          </div>
+
+          <!-- 30-Day Trend -->
+          <div class="chart-section">
+            <h2>30-Day Trend</h2>
+            <div class="bar-chart" id="bar-chart">
+              <!-- Populated by stats.js -->
+            </div>
+            <div class="chart-legend">
+              <span class="legend-views">Page Views</span>
+              <span class="legend-uniques">Unique Visitors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>ReqShare &mdash; Built with Cloudflare Workers &amp; GitHub Pages</span>
+        <div class="footer-links">
+          <a href="./">Home</a>
+          <a href="create.html">Build</a>
+          <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://buymeacoffee.com/timtian" target="_blank" rel="noopener">Buy Me a Coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stats.js"></script>
 </body>
 </html>

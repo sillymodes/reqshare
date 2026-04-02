@@ -3,14 +3,145 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReqShare - View Collection</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>ReqShare — View Collection</title>
+  <meta name="description" content="View and run API requests live in your browser. Shared via ReqShare — embeddable API documentation.">
+  <link rel="canonical" href="https://sillymodes.github.io/reqshare/c/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReqShare — View Collection">
+  <meta property="og:description" content="View and run API requests live in your browser. Shared via ReqShare.">
+  <meta property="og:url" content="https://sillymodes.github.io/reqshare/c/">
+  <meta property="og:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReqShare — View Collection">
+  <meta name="twitter:description" content="View and run API requests live in your browser. Shared via ReqShare.">
+  <meta name="twitter:image" content="https://sillymodes.github.io/reqshare/assets/og-image.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ReqShare — View Collection",
+    "description": "View and run API requests live in your browser. Shared via ReqShare — embeddable API documentation.",
+    "url": "https://sillymodes.github.io/reqshare/c/"
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <noscript>This page requires JavaScript to display API request collections.</noscript>
-  <!-- TODO: Collection viewer -->
-  <script src="/js/viewer.js"></script>
-  <script src="/js/reviews.js"></script>
+
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+      <a href="../" class="logo" aria-label="ReqShare home">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 12L48 32L28 52" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 32H12" stroke="#58a6ff" stroke-width="6" stroke-linecap="round"/></svg>
+        ReqShare
+      </a>
+      <nav>
+        <a href="../create.html">Build Your Own</a>
+        <a href="../stats.html">Stats</a>
+        <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <noscript>
+      <div class="empty-state">
+        <p>This page requires JavaScript to display API request collections.</p>
+      </div>
+    </noscript>
+
+    <!-- Loading state (shown initially) -->
+    <div class="loading-state" id="loading-state">
+      <div class="spinner spinner-lg"></div>
+      <span>Loading collection...</span>
+    </div>
+
+    <!-- Error state (hidden by default) -->
+    <div class="error-state" id="error-state" style="display:none">
+      <div class="empty-icon">&#9888;</div>
+      <h2>Collection Not Found</h2>
+      <p style="margin-top:8px">This collection may have expired or the link is incorrect.</p>
+      <a href="../create.html" class="btn btn-primary" style="margin-top:16px">Create a New Collection</a>
+    </div>
+
+    <!-- Collection content (hidden until loaded) -->
+    <div id="collection-content" style="display:none">
+      <!-- Collection Header -->
+      <section class="collection-header">
+        <div class="container">
+          <h1 id="collection-name"></h1>
+          <p class="collection-description" id="collection-desc"></p>
+          <div class="collection-meta" id="collection-meta">
+            <!-- Populated by viewer.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Request List -->
+      <section class="request-list">
+        <div class="container" id="request-list">
+          <!-- Populated by viewer.js -->
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="review-form-section">
+        <div class="container">
+          <h2>Rate This Collection</h2>
+          <div class="review-form" id="review-form">
+            <p style="margin-bottom:12px;font-size:0.9rem">How useful was this collection?</p>
+            <div class="stars stars-interactive stars-lg" id="star-rating" role="group" aria-label="Star rating">
+              <span class="star" data-value="1" role="button" tabindex="0" aria-label="1 star">&#9733;</span>
+              <span class="star" data-value="2" role="button" tabindex="0" aria-label="2 stars">&#9733;</span>
+              <span class="star" data-value="3" role="button" tabindex="0" aria-label="3 stars">&#9733;</span>
+              <span class="star" data-value="4" role="button" tabindex="0" aria-label="4 stars">&#9733;</span>
+              <span class="star" data-value="5" role="button" tabindex="0" aria-label="5 stars">&#9733;</span>
+            </div>
+            <div class="form-group">
+              <label for="review-name">Display Name (optional)</label>
+              <input type="text" id="review-name" placeholder="Anonymous" maxlength="50">
+            </div>
+            <div class="form-group">
+              <label for="review-comment">Comment (optional)</label>
+              <textarea id="review-comment" rows="2" placeholder="What did you think?" maxlength="500" style="font-family:var(--sans)"></textarea>
+            </div>
+            <button class="btn btn-primary" id="btn-submit-review">Submit Review</button>
+          </div>
+
+          <div style="margin-top:32px">
+            <div id="review-summary-viewer">
+              <!-- Populated by viewer.js -->
+            </div>
+            <div class="review-list" id="review-list-viewer">
+              <!-- Populated by viewer.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>ReqShare &mdash; Built with Cloudflare Workers &amp; GitHub Pages</span>
+        <div class="footer-links">
+          <a href="../create.html">Create Your Own</a>
+          <a href="../">Home</a>
+          <a href="https://github.com/sillymodes/reqshare" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://buymeacoffee.com/timtian" target="_blank" rel="noopener">Buy Me a Coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/viewer.js"></script>
 </body>
 </html>

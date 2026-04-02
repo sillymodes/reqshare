@@ -2,15 +2,14 @@ name = "reqshare-api"
 main = "index.js"
 compatibility_date = "2025-01-01"
 
-# KV namespace bindings — IDs to be filled in Step 2
-# [[kv_namespaces]]
-# binding = "COLLECTIONS"
-# id = ""
+[[kv_namespaces]]
+binding = "COLLECTIONS"
+id = "f89d26f4f2bd454fad7e87997f002e46"
 
-# [[kv_namespaces]]
-# binding = "STATS"
-# id = ""
+[[kv_namespaces]]
+binding = "STATS"
+id = "f8964cee54bf48c98122188f776bdbaf"
 
-# [[kv_namespaces]]
-# binding = "REVIEWS"
-# id = ""
+[[kv_namespaces]]
+binding = "REVIEWS"
+id = "e0d4bd3b1bbc4bdb8d2030f9b8863571"
