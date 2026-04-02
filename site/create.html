@@ -70,7 +70,7 @@
 
         <!-- cURL Import -->
         <div class="curl-import card" id="curl-import">
-          <h3 style="margin-bottom:8px">Import from cURL</h3>
+          <h2 style="margin-bottom:8px;font-size:1.25rem">Import from cURL</h2>
           <p style="font-size:0.85rem;margin-bottom:8px">Paste a cURL command to auto-populate a new request.</p>
           <textarea id="curl-input" rows="3" placeholder='curl -X POST https://api.example.com/data -H "Authorization: Bearer token" -d \'{"key":"value"}\''></textarea>
           <button class="btn btn-secondary btn-sm" id="btn-parse-curl">Parse cURL</button>
@@ -78,7 +78,7 @@
 
         <!-- Environment Variables -->
         <div class="env-vars-section card">
-          <h3>Environment Variables</h3>
+          <h2 style="font-size:1.25rem">Environment Variables</h2>
           <p class="env-hint">Reference these in your URLs and headers with <code class="inline-code">{{VAR_NAME}}</code> syntax.</p>
           <div id="env-vars-list" style="margin-top:12px">
             <!-- Populated by builder.js -->
@@ -88,7 +88,7 @@
 
         <!-- Requests -->
         <div class="requests-section">
-          <h3>Requests</h3>
+          <h2 style="font-size:1.25rem">Requests</h2>
           <div id="requests-list">
             <!-- Populated by builder.js -->
           </div>

@@ -94,3 +94,29 @@
 - **Live URLs:**
   - GitHub Pages: https://sillymodes.github.io/reqshare/
   - Worker: https://reqshare-api.sillymodes.workers.dev
+
+### Step 9 — README
+- **Status:** COMPLETE
+- **What was done:**
+  - Polished README.md with badges (MIT license, deploy status), quickstart guide, features list, self-hosting instructions, tech stack table, contributing section, and links
+  - Committed and pushed
+
+### Step 10 — Pre-Made Demo Collection
+- **Status:** COMPLETE
+- **Demo Collection ID:** `kUUKKDIE`
+- **Creator Token:** `2gsxmn1JWaGs1MGm9Dsa5Ur8LpmdyAH6`
+- **Expires:** 2026-05-02
+- **What was done:**
+  - Created demo collection via POST to live API with 4 JSONPlaceholder requests (List posts, Get single post, Create post, Get user details)
+  - Updated "See an Example" link in `site/index.html` from `c/#demo` to `c/#kUUKKDIE`
+  - Committed and pushed; GitHub Actions workflow #23879082492 completed successfully
+  - Verified live site at https://sillymodes.github.io/reqshare/ loads correctly with updated demo link
+- **Demo URL:** https://sillymodes.github.io/reqshare/c/#kUUKKDIE
+
+### Step 11 — Final SEO Checklist
+- **Status:** COMPLETE
+- **What was done:**
+  - Verified all 13 SEO checklist items across all 4 HTML pages
+  - Found 1 issue: `create.html` had skipped heading levels (h1 -> h3, missing h2)
+  - Fixed: changed 3 h3 elements ("Import from cURL", "Environment Variables", "Requests") to h2 with `font-size:1.25rem` to preserve visual sizing
+  - All other items passed: unique titles/descriptions, sitemap, robots.txt, JSON-LD, OG/Twitter cards, canonical URLs, rel="noopener", responsive CSS, lang/charset/viewport
