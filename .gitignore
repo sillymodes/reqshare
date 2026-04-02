@@ -1,3 +1,5 @@
 .env
 node_modules/
 .wrangler/
+project_design_and_protocol.md
+project_progress_and_results.md
