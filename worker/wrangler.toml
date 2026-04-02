@@ -1,6 +1,7 @@
 name = "reqshare-api"
 main = "index.js"
 compatibility_date = "2025-01-01"
+account_id = "55280c877887d919403b2b7719d12388"
 
 [[kv_namespaces]]
 binding = "COLLECTIONS"
