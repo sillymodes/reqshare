@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <path d="M28 12L48 32L28 52" stroke="#58a6ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 32H12" stroke="#58a6ff" stroke-width="6" stroke-linecap="round"/>
+  <!-- Left curly brace -->
+  <path d="M18 14C14 14 12 16 12 20L12 27C12 30 10 32 8 32C10 32 12 34 12 37L12 44C12 48 14 50 18 50" stroke="#58a6ff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right curly brace -->
+  <path d="M46 14C50 14 52 16 52 20L52 27C52 30 54 32 56 32C54 32 52 34 52 37L52 44C52 48 50 50 46 50" stroke="#58a6ff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Share arrow pointing right -->
+  <path d="M27 26L37 32L27 38" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M37 32H24" stroke="#58a6ff" stroke-width="4" stroke-linecap="round"/>
 </svg>
